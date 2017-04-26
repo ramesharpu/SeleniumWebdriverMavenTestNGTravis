@@ -4,3 +4,12 @@ jdk:
 
 before_install:
 - chmod 777 drivers/*
+
+sudo: required
+dist: trusty
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
