@@ -2,9 +2,6 @@ language: java
 jdk:
 - oraclejdk8
 
-before_install:
-- chmod 777 /home/travis/build/ramesharpu/SeleniumWebdriverMavenTestNGTravis/drivers/*
-
 sudo: required
 dist: trusty
 addons:
@@ -13,3 +10,13 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
+
+before_install:
+- chmod 777 /home/travis/build/ramesharpu/SeleniumWebdriverMavenTestNGTravis/drivers/*
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sudo apt-get update
+- sudo apt-get install -y libappindicator1 fonts-liberation
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+- sudo dpkg -i google-chrome*.deb
