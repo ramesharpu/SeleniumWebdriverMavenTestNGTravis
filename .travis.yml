@@ -3,7 +3,7 @@ jdk:
 - oraclejdk8
 
 before_install:
-- chmod 777 drivers/*
+- chmod 777 /home/travis/build/ramesharpu/SeleniumWebdriverMavenTestNGTravis/drivers/*
 
 sudo: required
 dist: trusty
