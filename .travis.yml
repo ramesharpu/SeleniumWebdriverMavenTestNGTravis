@@ -3,4 +3,5 @@ jdk:
 - oraclejdk8
 
 after_success:
-  - eval "$(pwd)" #start the ssh agent
+  - echo "Present working directory"
+  - echo $PWD
