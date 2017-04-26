@@ -10,12 +10,15 @@ import org.testng.annotations.AfterTest;
 
 public class NewTest {
 	public WebDriver driver;
+	String currentDir = System.getProperty("user.dir");
+	
 	@Test
 	public void sampleTest() {
 		driver.get("http://www.facebook.com");
 	}
 	@BeforeTest
 	public void beforeTest() {
+		System.setProperty("webdriver.chrome.driver", currentDir+"\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 
